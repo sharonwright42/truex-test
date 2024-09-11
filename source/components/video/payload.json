@@ -1,0 +1,171 @@
+{
+  "title" : "The true[X] Employee Experience",
+  "description" : "Our mission is to provide the best advertising experience for consumers, the best monetization for premium publishers, and the best return for brand advertisers. Learn about our team and employee experience.",
+  "cover" : "https://stash.truex.com/reference-apps/scratch/truex_cover_placeholder_spaceneedle.png",
+  "preview" : "https://media.truex.com/video_assets/2017-03-06/a9fbc895-6987-440e-b940-eeef8a714338_large.mp4",
+  "url" : "http://development.scratch.truex.com.s3.amazonaws.com/roku/simon/roku-reference-app-stream-med.mp4",
+  "adpods" : [
+    {
+      "duration": 107.3,
+      "renderTime": 0,
+      "rendersequence": "preroll",
+      "tracking": [],
+      "viewed": false,
+      "ads": [
+        {
+          "adid": "super_tag",
+          "adserver": "https://get.truex.com/e6a9f22fea580af9b6c993d1f4f5881812126cd5/vast/companion?dimension_2=1&stream_id=Sample+use+of+RAF+in+RSG&env[]=brightscript&user_agent=Roku/DVP-13.1%20(13.1.4.1510-04)",
+          "adsystem": "trueX",
+          "adtitle": "VAST Super Tag",
+          "companionads": [
+            {
+              "height": 540,
+              "mimetype": "application/json",
+              "provider": "truex",
+              "tracking": [],
+              "url": "data:application/json;base64,eyJ1c2VyX2lkIjoiM2JiNDI3OGQtNjJiMi01NDBjLWIzZDQtNmIyZDViOGU1\nOWNhIiwicGxhY2VtZW50X2hhc2giOiJlNmE5ZjIyZmVhNTgwYWY5YjZjOTkz\nZDFmNGY1ODgxODEyMTI2Y2Q1IiwidmFzdF9jb25maWdfdXJsIjoiZ2V0LnRy\ndWV4LmNvbS9lNmE5ZjIyZmVhNTgwYWY5YjZjOTkzZDFmNGY1ODgxODEyMTI2\nY2Q1L3Zhc3QvY29uZmlnP2RpbWVuc2lvbl8yPTEmc3RyZWFtX2lkPVNhbXBs\nZSt1c2Urb2YrUkFGK2luK1JTRyZ0ZWNobm9sb2dpZXMlNUIlNUQ9YnJpZ2h0\nc2NyaXB0JnVzZXJfYWdlbnQ9Um9rdSUyRkRWUC0xMy4xKyUyODEzLjEuNC4x\nNTEwLTA0JTI5In0=",
+              "width": 960
+            }
+          ],
+          "creativeadid": "",
+          "creativeid": "placeholder_video",
+          "duration": 15.6,
+          "requestid": "7498ff5c-7827-4b9f-9cc6-82d81bfd54af",
+          "streamformat": "mp4",
+          "streams": [],
+          "tracking": []
+        },
+        {
+          "adid": "1",
+          "adserver": "no_url_imported_ad",
+          "adtitle": "Generic Inline Video Ad - Coffee",
+          "companionads": [],
+          "creativeadid": "",
+          "creativeid": "1",
+          "duration": 29.2,
+          "requestid": "7498ff5c-7827-4b9f-9cc6-82d81bfd54af",
+          "streamformat": "mp4",
+          "streams": [],
+          "tracking": []
+        },
+        {
+          "adid": "2",
+          "adserver": "no_url_imported_ad",
+          "adtitle": "Generic Inline Video Ad - Airline",
+          "companionads": [],
+          "creativeadid": "",
+          "creativeid": "2",
+          "duration": 30.3,
+          "requestid": "7498ff5c-7827-4b9f-9cc6-82d81bfd54af",
+          "streamformat": "mp4",
+          "streams": [],
+          "tracking": []
+        },
+        {
+          "adid": "3",
+          "adserver": "no_url_imported_ad",
+          "adtitle": "Generic Inline Video Ad - Petcare",
+          "companionads": [],
+          "creativeadid": "",
+          "creativeid": "3",
+          "duration": 32.2,
+          "requestid": "7498ff5c-7827-4b9f-9cc6-82d81bfd54af",
+          "streamformat": "mp4",
+          "streams": [
+            {
+              "bitrate": 50590,
+              "height": 2160,
+              "id": "petcare-video-ad",
+              "mimetype": "video/mp4",
+              "provider": "",
+              "url": "https://qa-media.truex.com/reference_apps/sample_ads/video/petcare-4k.mp4",
+              "width": 3840
+            }
+          ],
+          "tracking": []
+        }
+      ]
+    },
+    {
+      "duration": 107.3,
+      "renderTime": 593,
+      "rendersequence": "midroll",
+      "tracking": [],
+      "viewed": false,
+      "ads": [
+        {
+          "adid": "super_tag",
+          "adserver": "https://get.truex.com/e6a9f22fea580af9b6c993d1f4f5881812126cd5/vast/companion?dimension_2=1&stream_id=Sample+use+of+RAF+in+RSG&env[]=brightscript&user_agent=Roku/DVP-13.1%20(13.1.4.1510-04)",
+          "adsystem": "trueX",
+          "adtitle": "VAST Super Tag",
+          "companionads": [
+            {
+              "height": 540,
+              "mimetype": "application/json",
+              "provider": "truex",
+              "tracking": [],
+              "url": "data:application/json;base64,eyJ1c2VyX2lkIjoiM2JiNDI3OGQtNjJiMi01NDBjLWIzZDQtNmIyZDViOGU1\nOWNhIiwicGxhY2VtZW50X2hhc2giOiJlNmE5ZjIyZmVhNTgwYWY5YjZjOTkz\nZDFmNGY1ODgxODEyMTI2Y2Q1IiwidmFzdF9jb25maWdfdXJsIjoiZ2V0LnRy\ndWV4LmNvbS9lNmE5ZjIyZmVhNTgwYWY5YjZjOTkzZDFmNGY1ODgxODEyMTI2\nY2Q1L3Zhc3QvY29uZmlnP2RpbWVuc2lvbl8yPTEmc3RyZWFtX2lkPVNhbXBs\nZSt1c2Urb2YrUkFGK2luK1JTRyZ0ZWNobm9sb2dpZXMlNUIlNUQ9YnJpZ2h0\nc2NyaXB0JnVzZXJfYWdlbnQ9Um9rdSUyRkRWUC0xMy4xKyUyODEzLjEuNC4x\nNTEwLTA0JTI5In0=",
+              "width": 960
+            }
+          ],
+          "creativeadid": "",
+          "creativeid": "placeholder_video",
+          "duration": 15.6,
+          "requestid": "7498ff5c-7827-4b9f-9cc6-82d81bfd54af",
+          "streamformat": "mp4",
+          "streams": [],
+          "tracking": []
+        },
+        {
+          "adid": "1",
+          "adserver": "no_url_imported_ad",
+          "adtitle": "Generic Inline Video Ad - Coffee",
+          "companionads": [],
+          "creativeadid": "",
+          "creativeid": "1",
+          "duration": 29.2,
+          "requestid": "7498ff5c-7827-4b9f-9cc6-82d81bfd54af",
+          "streamformat": "mp4",
+          "streams": [],
+          "tracking": []
+        },
+        {
+          "adid": "2",
+          "adserver": "no_url_imported_ad",
+          "adtitle": "Generic Inline Video Ad - Airline",
+          "companionads": [],
+          "creativeadid": "",
+          "creativeid": "2",
+          "duration": 30.3,
+          "requestid": "7498ff5c-7827-4b9f-9cc6-82d81bfd54af",
+          "streamformat": "mp4",
+          "streams": [],
+          "tracking": []
+        },
+        {
+          "adid": "3",
+          "adserver": "no_url_imported_ad",
+          "adtitle": "Generic Inline Video Ad - Petcare",
+          "companionads": [],
+          "creativeadid": "",
+          "creativeid": "3",
+          "duration": 32.2,
+          "requestid": "7498ff5c-7827-4b9f-9cc6-82d81bfd54af",
+          "streamformat": "mp4",
+          "streams": [
+            {
+              "bitrate": 50590,
+              "height": 2160,
+              "id": "petcare-video-ad",
+              "mimetype": "video/mp4",
+              "provider": "",
+              "url": "https://qa-media.truex.com/reference_apps/sample_ads/video/petcare-4k.mp4",
+              "width": 3840
+            }
+          ],
+          "tracking": []
+        }
+      ]
+    }
+  ]
+}
