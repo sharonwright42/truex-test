@@ -22,9 +22,9 @@ function parseToMedia(jsonObject as Object)
   content.title = jsonObject.title
   content.description = jsonObject.description
   content.cover = jsonObject.cover
-  content.videoList.push({"Preview": jsonObject.preview})
-  content.videoList.push({"Video": jsonObject.url})
-
+  content.previewUrl = jsonObject.preview
+  content.videoUrl = jsonObject.url
+  
   return content
 end function
 
@@ -34,12 +34,14 @@ function createEmptyMediaObject()
   content.addField("title", "string", true)
   content.addField("description", "string", true)
   content.addField("cover", "string", true)
-  content.addField("videoList", "array", true)
+  content.addField("videoUrl", "string", true)
+  content.addField("previewUrl", "string", true)
 
   content.title = ""
   content.description = ""
   content.cover = ""
-  content.videoList = []
+  content.videoUrl = ""
+  content.previewUrl = ""
 
   return content
 end function

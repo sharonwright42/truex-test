@@ -4,6 +4,6 @@
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
     
     <children>
-      <MediaDetailScreen id="mediaDetailScreen" visible="true" translation="[0,0]" />
+      <EpisodeDetailScreen id="episodeDetailScreen" visible="true" translation="[0, 0]" />
     </children>
 </component>

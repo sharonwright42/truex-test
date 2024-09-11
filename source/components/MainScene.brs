@@ -3,8 +3,8 @@ function init()
 end function 
 
 function setupDetailScreen()
-  m.mediaDetailScreen = m.top.findNode("MediaDetailScreen")
-  m.mediaDetailScreen.setFocus(true)
+  m.episodeDetailScreen = m.top.findNode("EpisodeDetailScreen")
+  m.episodeDetailScreen.setFocus(true)
 end Function
 
 function onKeyEvent(key, press) as Boolean
@@ -12,7 +12,7 @@ function onKeyEvent(key, press) as Boolean
   if press then
     if key = "options"
     else if key = "back"
-      if m.mediaDetailScreen.visible = true
+      if m.episodeDetailScreen.visible = true
 		result = false
       end if
 
