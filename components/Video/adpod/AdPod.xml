@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "utf-8" ?> 
+
+<component name="AdPod" extends="ContentNode" >
+
+  <interface>
+    <field id="duration" type="integer" />
+    <field id="renderTime" type="integer" />
+    <field id="renderSequence" type="string" />
+    <field id="tracking" type="roArray" />
+    <field id="viewed" type="boolean" />
+    <field id="ads" type="roArray" />
+  </interface>
+
+</component>

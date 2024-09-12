@@ -15,7 +15,6 @@ end sub
 
 sub setupVideo(content as Object)
   videoContent = createObject("RoSGNode", "ContentNode")
-  ? videoContent
 
   videoContent.title = content.title
   videoContent.streamformat = "mp4"

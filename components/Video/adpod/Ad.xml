@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "utf-8" ?> 
+
+<component name="Ad" extends="ContentNode" >
+
+  <interface>
+    <field id="adId" type="string" />
+    <field id="adServer" type="string" />
+    <field id="adSystem" type="string" />
+    <field id="adTitle" type="string" />
+    <field id="companionAds" type="roArray" />
+    <field id="creativeAdId" type="string" />
+    <field id="creativeId" type="string" />
+    <field id="duration" type="integer" />
+    <field id="requestId" type="string" />
+    <field id="streamFormat" type="string" />
+    <field id="streams" type="roArray" />
+    <field id="tracking" type="roArray" />
+  </interface>
+
+</component>
