@@ -6,7 +6,7 @@
     <field id="content" type="node" />
   </interface>
 
-  <script type="text/brightscript" uri="pkg:/components/MediaInfo/EpisodeDetailScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/components/EpisodeDetail/EpisodeDetailScreen.brs" />
 
 	<children>
 	  	<LayoutGroup id="mediaInfoGroup" layoutDirection="horiz" horizAlignment="left" vertAlignment="top" translation="[50, 50]" itemSpacings="[20]">

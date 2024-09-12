@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8" ?> 
+
+<component name="PlayerScreen" extends="Group" >
+
+  <interface>
+    <field id="content" type="node" />
+  </interface>
+
+  <script type="text/brightscript" uri="pkg:/components/Video/PlayerScreen.brs" />
+
+  <children>
+    <Video 
+      id = "player" 
+      width="1920"
+      height="1080"
+      visible = "false" />
+  </children>
+
+</component>

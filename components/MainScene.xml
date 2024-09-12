@@ -4,6 +4,7 @@
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
     
     <children>
-      <EpisodeDetailScreen id="episodeDetailScreen" visible="true" translation="[0, 0]" />
+        <!--<EpisodeDetailScreen id="episodeDetailScreen" visible="true" translation="[0, 0]" />-->
+        <PlayerScreen id="playerScreen" visible="true" translation="[0, 0]" />
     </children>
 </component>

@@ -43,11 +43,11 @@ end sub
 
 sub loadContent()
   content = m.episodeDetailLoadTask.content
-  m.coverImage.uri = "pkg:/images/watercolor-corgi-dog.png"
   m.titleLabel.text = content.title
   m.descriptionLabel.text = content.description
   m.coverImage.uri = content.cover
   m.videoUrl = content.videoUrl
+  m.previewUrl = content.previewUrl
 
   m.buttonGroup.setFocus(true)
   m.playButton.setFocus(true)
@@ -55,10 +55,16 @@ end sub
 
 sub onButtonSelected(event as Object)
   data = event.GetRoSGNode()
+  videoData = createObject("roSGNode", "ContentNode")
+  videoData.addField("title", "string", true)
+  videoData.addField("videoUrl", "string", true)
+  videoData.title = data.title
 
   if (data.id = "playButton")
-    'video here with playUrl
-  else 
-    'video here with perview url
+    videoData.videoUrl = m.videoUrl
+  else
+    videoData.videoUrl = m.previewUrl
   end if
+  'redirect to video screen here
+  ?videoData
 end sub

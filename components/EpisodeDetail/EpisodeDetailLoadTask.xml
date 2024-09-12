@@ -6,6 +6,6 @@
     <field id="content" type="node" />
   </interface>
 
-  <script type="text/brightscript" uri="pkg:/components/MediaInfo/EpisodeDetailLoadTask.brs" />
+  <script type="text/brightscript" uri="pkg:/components/EpisodeDetail/EpisodeDetailLoadTask.brs" />
 
 </component>
