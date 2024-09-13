@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<component name="EpisodeDetailLoadTask" extends="Task" >
+<component name="EpisodeDetailLoadTask" extends="Task">
 
   <interface>
     <field id="content" type="node" />

@@ -66,5 +66,4 @@ sub onButtonSelected(event as Object)
     videoData.videoUrl = m.previewUrl
   end if
   'redirect to video screen here
-  ?videoData
 end sub

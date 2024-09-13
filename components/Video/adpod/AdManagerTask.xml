@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<component name="AdManagerTask" extends="Task">
+
+  <script type="text/brightscript" uri="pkg:/components/Video/adpod/AdManagerTask.brs" />
+
+  <interface>
+    <field id="video" type="node" />
+    <field id="adPods" type="array" />
+  </interface>
+
+</component>
