@@ -1,22 +1,30 @@
 function init()
-  'setupDetailScreen()
+  findNodes()
+  setupDetailScreen()
   setupTrueX()
-  setupPlayerScreen()
 end function
 
-' function setupDetailScreen()
-'   m.episodeDetailScreen = m.top.findNode("EpisodeDetailScreen")
-'   m.episodeDetailScreen.setFocus(true)
-' end function
+function findNodes()
+  m.screensContainer = m.top.findNode("screensContainer")
+end function
+
+function setupDetailScreen()
+  m.episodeDetailScreen = m.top.findNode("EpisodeDetailScreen")
+  m.episodeDetailScreen.setFocus(true)
+end function
 
 function setupTrueX()
   m.trueXLibrary = m.top.findNode("TruexAdLibrary")
   m.trueXLibrary.observeField("loadStatus", "onTruexLibraryLoadStatusChanged")
 end function
 
-function setupPlayerScreen()
-  m.playerScreen = m.top.findNode("PlayerScreen")
-  m.playerScreen.setFocus(true)
+'---------------------------------------
+' Print out the load status of TrueX
+'---------------------------------------
+function onTruexLibraryLoadStatusChanged(event as Object)
+  if m.trueXLibrary = invalid then return false
+
+  print m.trueXLibrary.loadStatus
 end function
 
 function onKeyEvent(key, press) as Boolean
@@ -24,7 +32,7 @@ function onKeyEvent(key, press) as Boolean
   if press then
     if key = "options"
     else if key = "back"
-      if m.playerScreen.visible = true
+      if m.episodeDetailScreen.visible = true
 		result = false
       end if
 

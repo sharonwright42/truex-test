@@ -20,11 +20,12 @@ sub setupLoadTask()
   m.playerScreenLoadTask.control = "RUN"
 end sub
 
-sub loadContent()
-  setupVideo(m.playerScreenLoadTask.content)
+sub loadContent(event as Object)
+  data = event.getData()
+  loadVideo(m.playerScreenLoadTask.content)
 end sub
 
-sub setupVideo(content as Object)
+sub loadVideo(content as Object)
   videoContent = createObject("RoSGNode", "ContentNode")
 
   videoContent.title = content.title
@@ -48,10 +49,21 @@ sub playVideo()
   m.video.control = "play"
 end sub
 
+sub closeVideo()
+  parent = m.video.getParent()
+  m.video.control = "stop"
+  m.video.content = invalid
+  m.top.close = true
+  parent.removeChild(m.video)
+  m.video = invalid
+end sub
+
+
 function onKeyEvent(key as String, press as Boolean) as Boolean
   if press then
     if key = "back" then
       m.video.control = "stop"
+      closeVideo()
       return true
     end if
   end if

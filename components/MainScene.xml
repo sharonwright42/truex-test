@@ -8,8 +8,9 @@
         <!-- True X Library needed to be in MainScene -->
         <ComponentLibrary id="TruexAdLibrary" uri="https://ctv.truex.com/roku/v1/release/TruexAdRenderer-Roku-v1.pkg"/>
         
-        <!--<EpisodeDetailScreen id="episodeDetailScreen" visible="true" translation="[0, 0]" />-->
-        <PlayerScreen id="playerScreen" visible="true" translation="[0, 0]" />
+        <Group id="screensContainer">
+            <EpisodeDetailScreen id="episodeDetailScreen" visible="true" translation="[0, 0]" />
+        </Group>
 
     </children>
 </component>
