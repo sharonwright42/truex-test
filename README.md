@@ -12,5 +12,4 @@ Take the zip file from /dist/apps/ and side-load it onto your Roku
 
 
 
-#### Picture credit
-Picture from: https://images3.alphacoders.com/134/1348336.jpeg
+#### Picture credit https://images3.alphacoders.com/134/1348336.jpeg
