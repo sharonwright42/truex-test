@@ -66,4 +66,35 @@ sub onButtonSelected(event as Object)
     videoData.videoUrl = m.previewUrl
   end if
   'redirect to video screen here
+  setupPlayerScreen(videoData)
 end sub
+
+function setupPlayerScreen(videoData as Object)
+  if m.playerScreen <> invalid then return false
+  m.playerScreen = createObject("roSGNode", "PlayerScreen")
+  m.playerScreen.id = "PlayerScreen"
+  m.playerScreen.observeField("close", "closePlayerScreen")
+  m.playerScreen.content = videoData
+
+  m.playerScreen.visible = true
+  parentView = m.top.getParent()
+
+  parentView.appendChild(m.playerScreen)
+  m.playerScreen.setFocus(true)
+end function
+
+function closePlayerScreen()
+  m.playerScreen.content = invalid
+  m.playerScreen.unobserveField("close")
+
+  parentView = m.top.getParent()
+  currentView = parentView.getChild(0)
+  currentView.visible = true
+  currentView.setFocus(true)
+  m.buttonGroup.setFocus(true)
+  m.playButton.setFocus(true)
+
+  m.playerScreen.visible = false
+  parentView.removeChildIndex(parentView.getChildCount() - 1)
+  m.playerScreen = invalid
+end function
