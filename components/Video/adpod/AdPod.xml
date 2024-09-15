@@ -3,8 +3,8 @@
 <component name="AdPod" extends="ContentNode" >
 
   <interface>
-    <field id="duration" type="integer" />
-    <field id="renderTime" type="integer" />
+    <field id="duration" type="float" />
+    <field id="renderTime" type="float" />
     <field id="renderSequence" type="string" />
     <field id="tracking" type="roArray" />
     <field id="viewed" type="boolean" />

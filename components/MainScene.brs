@@ -1,5 +1,6 @@
 function init()
   'setupDetailScreen()
+  setupTrueX()
   setupPlayerScreen()
 end function
 
@@ -7,6 +8,11 @@ end function
 '   m.episodeDetailScreen = m.top.findNode("EpisodeDetailScreen")
 '   m.episodeDetailScreen.setFocus(true)
 ' end function
+
+function setupTrueX()
+  m.trueXLibrary = m.top.findNode("TruexAdLibrary")
+  m.trueXLibrary.observeField("loadStatus", "onTruexLibraryLoadStatusChanged")
+end function
 
 function setupPlayerScreen()
   m.playerScreen = m.top.findNode("PlayerScreen")

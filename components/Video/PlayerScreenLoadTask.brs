@@ -15,28 +15,40 @@ sub getVideoContent()
 
 end sub
 
+'------------------------------------------------------------------------------------------
+' Parses ad array into an array of ad objects
+'
+' Params:
+'    * jsonObject as Object - json to be parsed out for video content
+'------------------------------------------------------------------------------------------
 function parseVideoContent(jsonObject as Object) as Object
   if (jsonObject = invalid) return invalid
 
   content = createObject("roSGNode", "ContentNode")
   content.addField("title", "string", true)
   content.addField("videoUrl", "string", true)
-  content.addField("adPods", "roArray", true)
 
   content.title = jsonObject.title
   content.videoUrl = jsonObject.url
   
   if (jsonObject.adPods <> invalid) then
+    content.addField("adPods", "roArray", true)
     content.adPods = parseAdPods(jsonObject.adPods)
   end if
  
   return content
 end function
 
-function parseAdPods(adpods as Object)
+'------------------------------------------------------------------------------------------
+' Parses adPod array into an array of adPod objects
+'
+' Params:
+'    * adPods as Object - array of adPods to be parsed with the AdPod Node
+'------------------------------------------------------------------------------------------
+function parseAdPods(adPods as Object) as Object
   adPodArray = []
   
-  for each adPodObj in adpods
+  for each adPodObj in adPods
     adPod = createObject("roSGNode", "AdPod")
     adPod.duration = adPodObj.duration
     adPod.renderTime = adPodObj.rendertime
@@ -50,7 +62,13 @@ function parseAdPods(adpods as Object)
   return adPodArray
 end function
 
-function parseAds(ads as Object)
+'------------------------------------------------------------------------------------------
+' Parses ad array into an array of ad objects
+'
+' Params:
+'    * ads as Object - array of ads to be parsed with the Ad Node
+'------------------------------------------------------------------------------------------
+function parseAds(ads as Object) as Object
   adArray = []
 
   for each adObj in ads

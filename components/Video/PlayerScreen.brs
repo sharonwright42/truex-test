@@ -5,7 +5,7 @@ sub init()
 end sub
 
 sub findNodes()
-  m.video = m.top.findNode("player")
+  m.video = m.top.findNode("video")
   m.content = m.top.findNode("content")
   m.adManagerTask = invalid
 end sub
@@ -20,9 +20,9 @@ sub setupLoadTask()
   m.playerScreenLoadTask.control = "RUN"
 end sub
 
-function loadContent()
+sub loadContent()
   setupVideo(m.playerScreenLoadTask.content)
-end function
+end sub
 
 sub setupVideo(content as Object)
   videoContent = createObject("RoSGNode", "ContentNode")
@@ -34,7 +34,7 @@ sub setupVideo(content as Object)
   m.video.content = videoContent
   playVideo()
 
-  if m.adManagerTask = invalid then
+  if m.adManagerTask = invalid and content.adPods <> invalid then
     m.adManagerTask = createObject("roSGNode", "AdManagerTask")
     m.adManagerTask.video = m.video
     m.adManagerTask.adPods = content.adPods
@@ -42,11 +42,11 @@ sub setupVideo(content as Object)
   end if
 end sub
 
-function playVideo()
+sub playVideo()
   m.video.setFocus(true)
   m.video.visible = "true"
   m.video.control = "play"
-end function
+end sub
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
   if press then
