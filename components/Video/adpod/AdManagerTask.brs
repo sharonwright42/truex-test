@@ -58,7 +58,7 @@ function playContentWithAds()
     else if type(msg) = "roSGNodeEvent" and msg.getField() = "state" then
       if msg.getData() = "finished" then
         playContent = false
-        m.top.close = true
+        m.top.finished = true
         exit while
       end if
     else if type(msg) = "roSGNodeEvent" and msg.getField() = "event" then

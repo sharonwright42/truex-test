@@ -18,7 +18,6 @@
 
 			<LayoutGroup id="buttonGroup" layoutDirection="horiz" horizAlignment="left" vertAlignment="top" itemSpacings="[20]">
 		      <Button id="playButton" minWidth="240" />
-		      <Button id="previewButton" minWidth="240" />
 		    </LayoutGroup>
 
 		  </LayoutGroup>

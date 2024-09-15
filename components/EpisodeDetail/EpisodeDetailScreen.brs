@@ -11,7 +11,6 @@ sub findNodes()
   m.coverImage = m.top.findNode("coverImage")
   m.buttonGroup = m.top.findNode("buttonGroup")
   m.playButton = m.top.findNode("playButton")
-  m.previewButton = m.top.findNode("previewButton")
 end sub
 
 sub setupLayout()
@@ -24,9 +23,6 @@ sub setupLayout()
   m.playButton.text = "Play"
   m.playButton.iconUri = ""
   m.playButton.focusedIconUri = ""
-  m.previewButton.text = "Preview"
-  m.previewButton.iconUri = ""
-  m.previewButton.focusedIconUri = ""
 
   m.top.setFocus(true)
 end sub
@@ -47,7 +43,6 @@ sub loadContent()
   m.descriptionLabel.text = content.description
   m.coverImage.uri = content.cover
   m.videoUrl = content.videoUrl
-  m.previewUrl = content.previewUrl
 
   m.buttonGroup.setFocus(true)
   m.playButton.setFocus(true)

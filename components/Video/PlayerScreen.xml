@@ -14,7 +14,11 @@
       id="video" 
       width="1920"
       height="1080"
-      visible = "false" />
+      visible="false" />
+
+    <LayoutGroup id="buttonGroup" layoutDirection="center" horizAlignment="center" vertAlignment="center" translation="[650, 350]">
+      <Button id="closeButton" minWidth="240" />
+		</LayoutGroup>
   </children>
 
 </component>

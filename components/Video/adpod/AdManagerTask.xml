@@ -8,6 +8,7 @@
     <field id="video" type="node" />
     <field id="adPods" type="array" />
     <field id="close" type="boolean" />
+    <field id="finished" type="boolean" />
   </interface>
 
 </component>
