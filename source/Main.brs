@@ -1,4 +1,3 @@
-
 sub main()
   screen = CreateObject("roSGScreen")
   m.port = CreateObject("roMessagePort")

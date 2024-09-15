@@ -39,6 +39,7 @@ sub loadVideo(content as Object)
     m.adManagerTask = createObject("roSGNode", "AdManagerTask")
     m.adManagerTask.video = m.video
     m.adManagerTask.adPods = content.adPods
+    m.adManagerTask.observeField("close", "closeVideo")
     m.adManagerTask.control = "run"
   end if
 end sub
@@ -50,11 +51,18 @@ sub playVideo()
 end sub
 
 sub closeVideo()
-  parent = m.video.getParent()
-  m.video.control = "stop"
-  m.video.content = invalid
+  if m.adManagerTask <> invalid then
+    m.adManagerTask.unobserveField("close")
+    m.adManagerTask.close = true
+    m.adManagerTask = invalid
+  end if
+
+  if m.video <> invalid then
+    m.video.control = "stop"
+    m.video.content = invalid
+  end if
+
   m.top.close = true
-  parent.removeChild(m.video)
   m.video = invalid
 end sub
 

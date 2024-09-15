@@ -22,29 +22,50 @@ function playContentWithAds()
   playContent = true
   while playContent
     msg = wait(1000, port)
+
+    if m.top.close then
+      playContent = false
+      exit while
+    end if
+
     currentAd = RAFAds.stitchedAdHandledEvent(msg, {sgNode: m.video, port: port})
 
-    if type(msg) = "roSGNodeEvent" and msg.getField() = "position" then
+    if currentAd = invalid then
+      m.video.setFocus(true)
+    end if
+
+    ' If the back button is selected, back out of video to the Detail Page
+    if msg <> invalid and msg.getField() = "keypressed" and msg.getData() = 0 then
+      m.top.close = true
+      playContent = false
+      exit while
+    else if type(msg) = "roSGNodeEvent" and msg.getField() = "position" then
       if currentAd <> invalid then
         m.currentAdInfo = getCurrentAdInfo(currentAd)
         m.currentAdPodInfo = getCurrentAdPodInfo(currentAd)
-        if isTrueXAd(currentAd) then
+        if currentAd.adExited = true then
+          playContent = false
+          exit while
+        end if
+
+        if isTrueXAd(currentAd) and currentAd.adCompleted = false then
           RAFAds.fireTrackingEvents(m.currentAdInfo, {"type": "Impression"})
           playTrueXAd(currentAd, port)
-        else if currentAd.evtHandled then
-          if currentAd.adExited = true then
-            playContent = false
-          end if
         end if
       else
         ' no ads here
       end if
     else if type(msg) = "roSGNodeEvent" and msg.getField() = "state" then
-
+      if msg.getData() = "finished" then
+        playContent = false
+        m.top.close = true
+        exit while
+      end if
     else if type(msg) = "roSGNodeEvent" and msg.getField() = "event" then
       if m.skipAds <> true then
         m.skipAds = canSkipAds(msg)
       end if
+
       handleTarEvent(msg, RAFAds)
     end if
   end while
@@ -59,7 +80,7 @@ end function
 function canSkipAds(event as Object) as Boolean
   data = event.getData()
 
-  return data.type = "adFreePod"
+  return data.type = "adFreePod" or data.type = "skipCardShown"
 end function
 
 '------------------------------------------------------------------------------------------
@@ -179,12 +200,11 @@ sub handleTarEvent(event as Object, RAFAds as Object)
   }
 
   if eventType = "videoEvent" and adEvent.subType <> "started" then
-
-    wasFired = RAFAds.fireTrackingEvents(m.currentAdInfo, {"event": adEventTypes[adEvent.subType]})
+    RAFAds.fireTrackingEvents(m.currentAdInfo, {"event": adEventTypes[adEvent.subType]})
   else if eventType = "adCompleted" or eventType = "optout" OR eventType = "noAdsAvailable" or eventType = "adError" then
-    wasFired = RAFAds.fireTrackingEvents(m.currentAdPodInfo, {"event": "PodComplete"})
+    RAFAds.fireTrackingEvents(m.currentAdPodInfo, {"event": "PodComplete"})
     playContentPlayer(RAFAds)
-  else if eventType = "userCancelStream" then
+  else if eventType = "userCancelStream" or eventType = "userCancel" then
     exitContent()
   end if
 end sub
@@ -194,17 +214,20 @@ end sub
 '---------------------------------------
 sub playContentPlayer(RAFAds as Object)
   m.tar.action = { type: "stop" }
-
+  seekTime = 0
+  
   cleanUpTrueX()
 
   'If the user earns the TrueX credit, can skip the rest of the adpod
   if m.skipAds = true then
     RAFAds.fireTrackingEvents(m.currentAdPodInfo, {"event": "PodComplete"})
-    m.video.seek = m.currentAdPodInfo.renderTime + m.currentAdPodInfo.duration
+    seekTime = m.currentAdPodInfo.renderTime + m.currentAdPodInfo.duration
+    m.skipAds = false
   else
-    m.video.seek = m.currentAdPodInfo.renderTime + m.currentAdInfo.duration
+    seekTime = m.currentAdPodInfo.renderTime + m.currentAdInfo.duration
   end if
 
+  m.video.seek = seekTime
   m.video.control = "play"
 end sub
 
@@ -212,7 +235,6 @@ end sub
 ' Hides and stops the video
 '---------------------------------------
 sub hideContentPlayer()
-
   m.video.control = "stop"
 end sub
 
@@ -220,7 +242,10 @@ end sub
 ' Cleans up the video and exit playback
 '---------------------------------------
 sub exitContent()
+  m.tar.action = { type: "stop" }
+
   cleanupTrueX()
+  m.top.close = "true"
   m.video.control = "stop"
 end sub
 
@@ -229,7 +254,7 @@ end sub
 '---------------------------------------
 sub cleanupTrueX()
   if m.tar <> invalid then
-    m.tar.unobserveFieldScoped("event")
+    m.tar.unobserveField("event")
     m.tar.visible = false
     m.tar.setFocus(false)
     m.top.removeChild(m.tar)

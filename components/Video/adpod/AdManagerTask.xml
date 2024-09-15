@@ -7,6 +7,7 @@
   <interface>
     <field id="video" type="node" />
     <field id="adPods" type="array" />
+    <field id="close" type="boolean" />
   </interface>
 
 </component>
